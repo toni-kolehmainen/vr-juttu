@@ -20,26 +20,18 @@ public class Toggle_location : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("tab")) {
+
+        action.action.performed += (ctx) =>
+        {
             toggleOn = !toggleOn;
             if (toggleOn) {
+                Debug.Log("Click righthand secondary");
                 transform.position = toggleObject.transform.position;
                 
             } else {
                 transform.position = startObject.transform.position;
 
             }
-        }
-        // action.action.performed += (ctx) =>
-        // {
-        //     toggleOn = !toggleOn;
-        //     if (toggleOn) {
-        //         transform.position = toggleObject.transform.position;
-                
-        //     } else {
-        //         transform.position = startObject.transform.position;
-
-        //     }
-        // };
+        };
     }
 }
